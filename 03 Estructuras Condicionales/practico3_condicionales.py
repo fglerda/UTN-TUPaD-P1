@@ -47,3 +47,92 @@ elif edad < 30:
 else:
     edad >= 30
     print("Categoria Adulto/a")
+
+"""5) Escribir un programa que permita introducir contraseñas de entre 8 y 14 caracteres
+(incluyendo 8 y 14). Si el usuario ingresa una contraseña de longitud adecuada, imprimir por en
+pantalla el mensaje "Ha ingresado una contraseña correcta"; en caso contrario, imprimir por
+pantalla "Por favor, ingrese una contraseña de entre 8 y 14 caracteres". Nota: investigue el uso
+de la función len() en Python para evaluar la cantidad de elementos que tiene un iterable tal
+como una lista o un string.
+"""
+
+contrasenia = input("Ingrese una contraseña entre 8 y 14 caracteres: ")
+if 8 <= len(contrasenia) <= 14:
+    print("Ha ingresado una contraseña correcta")
+else:
+    print("Por favor, ingrese una contraseña de entre 8 y 14 caracteres")
+
+"""6)Escribir un programa que tome la lista
+numeros_aleatorios, calcule su moda, su mediana y su media y las compare para determinar si
+hay sesgo positivo, negativo o no hay sesgo. Imprimir el resultado por pantalla.
+Definir la lista numeros_aleatorios de la siguiente forma:
+import random
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+Nota: el bloque de código anterior crea una lista con 50 números entre 1 y 100 elegidos de
+forma aleatoria.
+"""
+
+from statistics import mode, median, mean
+import random
+
+numeros_aleatorios = [random.randint(1, 100) for i in range(50)]
+print(f"Numeros aleatorios: {numeros_aleatorios}")
+moda = mode(numeros_aleatorios)
+print(f"mode = {moda}")
+mediana = median(numeros_aleatorios)
+print(f"median = {mediana}")
+media = mean(numeros_aleatorios)
+print(f"mean = {media}")
+
+if media > mediana > moda:  # Sesgo positivo
+    print("Sesgo positivo")
+elif media < mediana < moda:  # Sesgo negativo
+    print("Sesgo negativo")
+elif media == mediana == moda:  # Sin sesgo
+    print("Sin sesgo")
+else:  # No se cumplen las condiciones para identificar el sesgo
+    print("No se identifico sesgo ni ausencia del mismo.")
+
+"""7) Escribir un programa que solicite una frase o palabra al usuario. Si el string ingresado
+termina con vocal, añadir un signo de exclamación al final e imprimir el string resultante por
+pantalla; en caso contrario, dejar el string tal cual lo ingresó el usuario e imprimirlo por
+pantalla.
+"""
+
+vocales = {"a", "e", "i", "o", "u"}
+palabra = (input("Ingrese una frase o palabra: ")).lower()
+cantidad_caracteres = len(palabra)
+
+if cantidad_caracteres > 0:
+    ultimo_caracter = palabra[-1]  # Para obtener ultimo caracter.
+    if ultimo_caracter in vocales:
+        print(f"{palabra}!")
+    else:
+        print(palabra)
+else:
+    print("No se ingreso ningun caracter")
+
+"""8) Escribir un programa que solicite al usuario que ingrese su nombre y el número 1, 2 o 3
+dependiendo de la opción que desee:
+1. Si quiere su nombre en mayúsculas. Por ejemplo: PEDRO.
+2. Si quiere su nombre en minúsculas. Por ejemplo: pedro.
+3. Si quiere su nombre con la primera letra mayúscula. Por ejemplo: Pedro.
+El programa debe transformar el nombre ingresado de acuerdo a la opción seleccionada por el
+usuario e imprimir el resultado por pantalla. Nota: investigue uso de las funciones upper(),
+lower() y title() de Python para convertir entre mayúsculas y minúsculas."""
+
+nombre = input("Ingrese su nombre: ")
+opcion = int(
+    input(
+        "Ingrese la opcion deseada:\n1. Si quiere su nombre en mayúsculas.\n2. Si quiere su nombre en minúsculas.\n3. Si quiere su nombre con la primera letra mayúscula.\n"
+    )
+)
+if opcion == 1:
+    nombre = nombre.upper()
+    print(nombre)
+elif opcion == 2:
+    nombre = nombre.lower()
+    print(nombre)
+elif opcion == 3:
+    nombre = nombre.title()
+    print(nombre)
