@@ -136,3 +136,84 @@ elif opcion == 2:
 elif opcion == 3:
     nombre = nombre.title()
     print(nombre)
+
+"""9) Escribir un programa que pida al usuario la magnitud de un terremoto, clasifique la
+magnitud en una de las siguientes categorías según la escala de Richter e imprima el resultado
+por pantalla:
+● Menor que 3: "Muy leve" (imperceptible).
+● Mayor o igual que 3 y menor que 4: "Leve" (ligeramente perceptible).
+● Mayor o igual que 4 y menor que 5: "Moderado" (sentido por personas, pero
+generalmente no causa daños).
+● Mayor o igual que 5 y menor que 6: "Fuerte" (puede causar daños en estructuras
+débiles).
+● Mayor o igual que 6 y menor que 7: "Muy Fuerte" (puede causar daños significativos).
+● Mayor o igual que 7: "Extremo" (puede causar graves daños a gran escala)."""
+
+magnitud_terremoto = float(input("Indique magnitud del terremoto: "))
+
+if magnitud_terremoto >= 7:
+    print("Extremo")
+elif magnitud_terremoto >= 6:
+    print("Muy Fuerte")
+elif magnitud_terremoto >= 5:
+    print("Fuerte")
+elif magnitud_terremoto >= 4:
+    print("Moderado")
+elif magnitud_terremoto >= 3:
+    print("Leve")
+elif magnitud_terremoto < 3:
+    print("Imperceptible")
+
+"""10) Utilizando la información aportada en la siguiente tabla sobre las estaciones del año.
+Escribir un programa que pregunte al usuario en cuál hemisferio se encuentra (N/S), qué mes
+del año es y qué día es. El programa deberá utilizar esa información para imprimir por pantalla
+si el usuario se encuentra en otoño, invierno, primavera o verano.
+"""
+
+mes = int(input("Ingrese el mes (1-12): "))
+if mes < 1 or mes > 12:
+    print("Mes invalido. Debe ser entre 1 y 12.")
+    exit()
+
+dia = int(input("Ingrese el dia: "))
+if mes in [4, 6, 9, 11] and dia > 30:
+    print("Este mes solo tiene 30 dias.")
+    exit()
+elif mes == 2:
+    if dia > 28:
+        print("Febrero solo tiene 28 dias (29 en año bisiesto).")
+        exit()
+elif dia > 31:
+    print("Este mes solo tiene 31 dias.")
+    exit()
+
+hemisferio = input(
+    "¿En qué hemisferio te encuentras? (N para Norte / S para Sur): "
+).upper()
+if hemisferio != "N" and hemisferio != "S":
+    print("Por favor ingrese N para hemisferio Norte o S para hemisferio Sur.")
+    exit()
+
+if (mes == 12 and dia >= 21) or mes == 1 or mes == 2 or (mes == 3 and dia <= 20):
+    if hemisferio == "N":
+        print("Invierno")
+    else:
+        print("Verano")
+
+elif (mes == 3 and dia >= 21) or mes == 4 or mes == 5 or (mes == 6 and dia <= 20):
+    if hemisferio == "N":
+        print("Primavera")
+    else:
+        print("Otoño")
+
+elif (mes == 6 and dia >= 21) or mes == 7 or mes == 8 or (mes == 9 and dia <= 20):
+    if hemisferio == "N":
+        print("Verano")
+    else:
+        print("Invierno")
+
+elif (mes == 9 and dia >= 21) or mes == 10 or mes == 11 or (mes == 12 and dia <= 20):
+    if hemisferio == "N":
+        print("Otoño")
+    else:
+        print("Primavera")
