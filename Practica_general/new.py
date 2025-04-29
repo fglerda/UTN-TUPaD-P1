@@ -1,19 +1,22 @@
-"""10.Crear una función llamada calcular_promedio(a, b, c) que reciba
-tres números como parámetros y devuelva el promedio de ellos.
-Solicitar los números al usuario y mostrar el resultado usando esta
-función.
-"""
+lista = ["UTN", 2, 3.5, True]
+lista_2 = ["kki367", "dme357", "pkl367"]
+lista_anidada = [2, 4, "tomy", 1204, ["usuario", 74]]
+print(lista)
+print(lista[1])
+lista.append("juancito")  # append es un metodo
+lista.append(35)
+print(lista)
+lista.remove(2)  # es un metodo
+print(lista)
+lista[2] = "Nuevo dato"
+print(lista)
 
-
-def calcular_promedio(a, b, c):
-    sumar = a + b + c
-    promedio = sumar / 3
-    return promedio
-
-
-a = float(input("Inrese valor n°1: "))
-b = float(input("Inrese valor n°2: "))
-c = float(input("Inrese valor n°3: "))
-
-media = calcular_promedio(a, b, c)
-print(f"El promedio de {a}, {b} y {c} es: {media}")
+rango_lista = lista[2:]
+lista_final = lista + lista_2
+print(rango_lista)
+print(lista_final)
+print("kki367" in lista_final)
+print(lista_anidada)
+print(
+    lista_anidada[4][1]
+)  # con el indice 4 me ubico en la sub lista y con el indice 1 en el elemento que deseo dentro de ella

@@ -47,3 +47,12 @@ def informacion_personal(
     edad = edad if edad.strip() else "Sin datos"
     residencia = residencia if residencia.strip() else "Sin datos"
     return f"Soy {nombre} {apellido}, tengo {edad} años y vivo en {residencia}"
+
+
+def es_primo(num):
+    if num < 2:
+        return False
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
