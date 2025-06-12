@@ -1,12 +1,8 @@
-"""10) Elaborar una lista anidada llamada “lista_anidada” que contenga los siguientes elementos:
-● Posición lista_anidada[0]: 15
-● Posición lista_anidada[1]: True
-● Posición lista_anidada[2][0]: 25.5
-● Posición lista_anidada[2][1]: 57.9
-● Posición lista_anidada[2][2]: 30.6
-● Posición lista_anidada[3]: False
-Imprimir la lista resultante por pantalla.
-"""
+num_pares_1_al_10 = range(0, 11, 2)
+num_pares_1_al_10 = list(num_pares_1_al_10)
+num_4 = num_pares_1_al_10[2]
+print(num_4)
 
-lista_anidada = [[15], [True], [[25.5], [57.9], [30.6]], [False]]
-print(lista_anidada)
+mi_lista = [True, 3, "hola", 3.14, False]
+mi_sublista = mi_lista[1:4]
+print(mi_sublista)
